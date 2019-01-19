@@ -1,6 +1,4 @@
-// copied from source code, /server/data/products.json, deleted installment/size data
-{
-  "products": [
+[
     {
       "id": 12,
       "sku": 12064273040195392,
@@ -205,4 +203,3 @@
       "isFreeShipping": true
     }
   ]
-}
