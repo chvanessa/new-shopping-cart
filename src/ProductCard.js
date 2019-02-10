@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
-//import ProductData from './static/data/products.json'
-//import Product from './Product.js';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 
-//const pimages =  require('../../static/products/' + item.sku + "_1.jpg")
 // replace app class with my classes //
 class ProductCard extends Component {
   render() {
@@ -12,18 +11,23 @@ class ProductCard extends Component {
       <div>
       {this.props.products.map(item => (
         <div>
-        <div className="pcard-container">
-          <img
-          style={{ flex: 1, alignSelf:'stretch', width: undefined, height: undefined}}
-          src={require('./static/products/' + item.sku + '_1.jpg')} />
-          Name: {item.title} <br/>  <br/>
-          Price: ${item.price} <br/>
-          <button className="addToCartButton"> Add to Cart</button>
-          </div>
-          <br/>
-          </div>
-        ))}
+        <Grid item xs={6}>
+          <Paper className={this.props.pass.paper}>
+            <div className="pcard-container">
+              <img
+                style={{alignSelf: 'center', flex:1, height: 300, width: 200}}
+                src={require('./static/products/' + item.sku + '_1.jpg')}
+                resizeMode="contain" />
+                    Name: {item.title} <br/>  <br/>
+                    Price: ${item.price} <br/>
+                    <button className="addToCartButton"> Add to Cart</button>
+            </div>
+          </Paper>
+        </Grid>
+            <br/>
         </div>
+        ))}
+      </div>
       )
   }
 }
