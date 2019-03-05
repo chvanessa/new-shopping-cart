@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import ProductCard from './ProductCard.js';
 // import productData from './static/data/products.json'
-import AutoGrid from './grid.js' //added
-import ProductPage from './ProductPage.js'
 import Cart from './Cart.js'
+import Catalogue from './Catalogue.js'
+// import productData from './static/data/products.json'
+// let productList = productData.products
 
 // replace app class with my classes //
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      products: []
+    };
+  }
+
+  componentDidMount() {
+    import("./static/data/products.json")
+      .then(json => {
+        this.setState({ products: json.products });
+      })
+      .catch(error => {
+        alert(error);
+      });
+  }
+
   render() {
-    // let productList = productData.products   //<ProductCard products = {productList} />
+    const { products } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-          Hello this is the shopping cart.
-          </p>
-          <ProductPage/>
+          <Catalogue productList = {products} />
           <Cart/>
-        </header>
       </div>
     );
   }

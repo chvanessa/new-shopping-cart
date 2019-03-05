@@ -1,35 +1,44 @@
 import React, { Component } from 'react';
-import './App.css';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
-
+import { Card, Button, Icon } from "semantic-ui-react";
+import './ProductCard.css'
 // replace app class with my classes //
-class ProductCard extends Component {
-  render() {
-    return (
-      <div>
-      {this.props.products.map(item => (
-        <div>
-        <Grid item xs={6}>
-          <Paper className={this.props.pass.paper}>
-            <div className="pcard-container">
-              <img
-                style={{alignSelf: 'center', flex:1, height: 300, width: 200}}
-                src={require('./static/products/' + item.sku + '_1.jpg')}
-                resizeMode="contain" />
-                    Name: {item.title} <br/>  <br/>
-                    Price: ${item.price} <br/>
-                    <button className="addToCartButton"> Add to Cart</button>
-            </div>
-          </Paper>
-        </Grid>
-            <br/>
-        </div>
-        ))}
-      </div>
-      )
-  }
-}
+// class ProductCard extends Component {
+//   render() {
+//     const { item } = this.props;
+//     return (
+//       <Card
+//       image=
+//       header={item.title}
+//       description={`$ ${item.price}`}
+//       //extra={btn}
+//       />
+//
+//                     // Name: {item.title} <br/>  <br/>
+//                     // Price: ${item.price} <br/>
+//                     // <button className="addToCartButton"> Add to Cart</button>
+//       )
+//   }
+// }
+//
+// export default ProductCard;
 
-export default ProductCard;
+const btn = (
+  <Button icon labelPosition="right">
+    Add to cart
+    <Icon name="shop" />
+  </Button>
+);
+
+const Product = props => {
+  const {prod} = props;
+  return (
+    <Card
+      image={require('./static/products/' + prod.sku + '_1.jpg')}
+      header={prod.title}
+      description={`$ ${prod.price}`}
+      extra={btn}
+    />
+  );
+};
+
+export default Product;
