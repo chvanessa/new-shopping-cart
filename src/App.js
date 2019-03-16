@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import ProductCard from './ProductCard.js';
-// import productData from './static/data/products.json'
 import Cart from './Cart.js'
 import Catalogue from './Catalogue.js'
 // import productData from './static/data/products.json'
@@ -11,7 +10,6 @@ import Catalogue from './Catalogue.js'
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       products: []
     };

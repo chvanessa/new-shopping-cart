@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button, Icon } from "semantic-ui-react";
 import './ProductCard.css'
-// replace app class with my classes //
+
 // class ProductCard extends Component {
 //   render() {
 //     const { item } = this.props;
@@ -30,12 +30,12 @@ const btn = (
 );
 
 const Product = props => {
-  const {prod} = props;
+  const {item} = props;
   return (
     <Card
-      image={require('./static/products/' + prod.sku + '_1.jpg')}
-      header={prod.title}
-      description={`$ ${prod.price}`}
+      image={require('./static/products/' + item.sku + '_1.jpg')}
+      header={item.title}
+      description={`$ ${item.price}`}
       extra={btn}
     />
   );
