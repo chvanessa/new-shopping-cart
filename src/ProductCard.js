@@ -1,44 +1,22 @@
 import React, { Component } from 'react';
-import { Card, Button, Icon } from "semantic-ui-react";
+// import { Card, Button, Icon } from "semantic-ui-react";
 import './ProductCard.css'
 
-// class ProductCard extends Component {
-//   render() {
-//     const { item } = this.props;
-//     return (
-//       <Card
-//       image=
-//       header={item.title}
-//       description={`$ ${item.price}`}
-//       //extra={btn}
-//       />
-//
-//                     // Name: {item.title} <br/>  <br/>
-//                     // Price: ${item.price} <br/>
-//                     // <button className="addToCartButton"> Add to Cart</button>
-//       )
-//   }
-// }
-//
-// export default ProductCard;
+class ProductCard extends Component {
+  render() {
+    const { item } = this.props;
+    return (
 
-const btn = (
-  <Button icon labelPosition="right">
-    Add to cart
-    <Icon name="shop" />
-  </Button>
-);
+      <div>
+            <img src={require('./static/products/' + item.sku + '_1.jpg')}/>
+            <div className="pcard-text">
+              {item.title} <br/>
+              Price: ${item.price}
+            </div>
+            <button className="addToCartButton"> Add to Cart</button>
+        </div>
+      )
+  }
+}
 
-const Product = props => {
-  const {item} = props;
-  return (
-    <Card
-      image={require('./static/products/' + item.sku + '_1.jpg')}
-      header={item.title}
-      description={`$ ${item.price}`}
-      extra={btn}
-    />
-  );
-};
-
-export default Product;
+export default ProductCard;

@@ -1,3 +1,17 @@
-.ui.card {
-  text-align: center;
+/* .pcard-container {
+  background-color: blue;
+  color:black;
+  padding:30px 10px;
+
+} */
+
+.pcard-text {
+  font-size: 12pt;
+  background-color: pink;
+  line-height: 20px;
+}
+
+img {
+  border-radius: 8px;
+  width: 70%;
 }
