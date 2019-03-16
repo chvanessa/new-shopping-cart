@@ -1,11 +1,11 @@
 import * as firebase from 'firebase';
 const config = {
-  apiKey: "AIzaSyA1Cep7SGgyL1fYBAyI1MkThjpz4JSMNcc",
-  authDomain: "new-shopping-cart-fb.firebaseapp.com",
-  databaseURL: "https://new-shopping-cart-fb.firebaseio.com",
-  projectId: "new-shopping-cart-fb",
-  storageBucket: "new-shopping-cart-fb.appspot.com",
-  messagingSenderId: "737946350625"
+  apiKey: "AIzaSyDR60K2wtoKFVX1yR4v9_jR6mwptRQtk38",
+  authDomain: "newshoppingcart-d427b.firebaseapp.com",
+  databaseURL: "https://newshoppingcart-d427b.firebaseio.com",
+  projectId: "newshoppingcart-d427b",
+  storageBucket: "newshoppingcart-d427b.appspot.com",
+  messagingSenderId: "825149926057"
 }
 firebase.initializeApp(config);
 const databaseRef = firebase.database().ref();
