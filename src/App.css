@@ -1,7 +1,9 @@
 /* .App {
   text-align: center;
-}
+  background-color: blue;
+} */
 
+/*
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -37,4 +39,8 @@
   font-size: 10pt;
   text-align: center;
   font-family: verdana;
+}
+
+.catContainer {
+  background-color: orange;
 }

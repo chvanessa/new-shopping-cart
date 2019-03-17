@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-// import { Card, Button, Icon } from "semantic-ui-react";
 import './ProductCard.css'
+import { Button } from 'semantic-ui-react'
+
+
 
 class ProductCard extends Component {
+
   render() {
     const { item } = this.props;
     return (
-
       <div>
-            <img src={require('./static/products/' + item.sku + '_1.jpg')}/>
+            <img className='prodImage' src={require('./static/products/' + item.sku + '_1.jpg')}/>
             <div className="pcard-text">
               {item.title} <br/>
               Price: ${item.price}
             </div>
-            <button className="addToCartButton"> Add to Cart</button>
+            <Button onClick={() => {this.props.addItem(item)}}>Add to Cart</Button>
         </div>
       )
   }
