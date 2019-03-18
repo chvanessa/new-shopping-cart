@@ -15,8 +15,9 @@ class Cart extends Component {
           <i aria-hidden="true" class="cart icon"></i>Shopping Cart
 
           {thecart.map(product => (
-            <div> {product.title}
-            <Button icon onClick={() => {this.props.removeItem(product)}}><Icon name='delete'/></Button></div>))}
+            <div> {product[0].title}
+            <Button icon onClick={() => {this.props.removeItem(product)}}><Icon name='delete'/></Button>
+            <br/> Size: {product[1]}</div>))}
           </a>
         <a class="item">
           <i aria-hidden="true" class="money icon"></i>Checkout

@@ -15,7 +15,9 @@ class ProductCard extends Component {
               {item.title} <br/>
               Price: ${item.price}
             </div>
-            <Button onClick={() => {this.props.addItem(item)}}>Add to Cart</Button>
+            {item.availableSizes.map(option => (
+              <Button onClick={() => {this.props.addItem(item, option)}}>{option}</Button>
+            ))}
         </div>
       )
   }

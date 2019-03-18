@@ -44,3 +44,9 @@
 .catContainer {
   background-color: orange;
 }
+
+.profile {
+  line-height: 40px;
+  margin: 20px;
+  text-align: left;
+}
